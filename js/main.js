@@ -7,13 +7,15 @@
 // Questo richiederà un minimo di ricerca.
 
 
+
 // chiedere età e numero di chilometri
 
 var passengerAge = prompt('Quanti anni hai?');
 console.log('Passenger Age', passengerAge);
 
 var kilometres = prompt('Di quanti Chilometri devi Spostarti?');
-console.log('Km', kilometres)
+console.log('Km', kilometres);
+
 
 // prezzo per chilometro
 
@@ -31,15 +33,30 @@ if (passengerAge < 18) {
     
     var scontoMinori = (ticketCost / 100) * 20;
     console.log('Sconto Minori: ', scontoMinori);
+    discountSpot.innerText = 'Discount: 20%.'
    
 }
 
-if (passengerAge > 65) {
+else if (passengerAge > 65) {
 
     var scontoadulti = (ticketCost / 100) * 40;
     console.log('Sconto adulti: ', scontoadulti);
+    discountSpot.innerText = 'Discount: 40%;'
 
 }
+
+else  {
+    discountSpot.innerText = 'Discount: 0.'
+}
+
+// aggiunta testo in html
+
+var kmSpot = document.getElementById('kilometres').innerText = kilometres;
+var priceSpot = document.getElementById('price');
+var discountSpot = document.getElementById('discount');
+var totalSpot = document.getElementById('total');
+
+
 
 
 
