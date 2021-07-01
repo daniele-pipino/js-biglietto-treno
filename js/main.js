@@ -6,7 +6,10 @@
 // L'output del prezzo finale va stampato in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). 
 // Questo richiederà un minimo di ricerca.
 
-
+var kmSpot = document.getElementById('kilometres');
+var priceSpot = document.getElementById('price');
+var discountSpot = document.getElementById('discount');
+var totalSpot = document.getElementById('total');
 
 // chiedere età e numero di chilometri
 
@@ -15,6 +18,7 @@ console.log('Passenger Age', passengerAge);
 
 var kilometres = prompt('Di quanti Chilometri devi Spostarti?');
 console.log('Km', kilometres);
+kmSpot.innerText = 'Chilometri: ' + kilometres;
 
 
 // prezzo per chilometro
@@ -25,6 +29,7 @@ console.log('Km', kilometres);
 
 var ticketCost = kilometres * kilometresPrice;
 console.log('Costo del biglietto', ticketCost);
+priceSpot.innerText = 'Costo: ' + ticketCost;
 
 // definizione sconti 
 
@@ -33,28 +38,33 @@ if (passengerAge < 18) {
     
     var scontoMinori = (ticketCost / 100) * 20;
     console.log('Sconto Minori: ', scontoMinori);
-    discountSpot.innerText = 'Discount: 20%.'
+    discountSpot.innerText = 'Discount: 20%.';
+    totalSpot.innerText =  ticketCost - scontoMinori.toFixed(2);
+    
    
 }
 
 else if (passengerAge > 65) {
 
-    var scontoadulti = (ticketCost / 100) * 40;
-    console.log('Sconto adulti: ', scontoadulti);
-    discountSpot.innerText = 'Discount: 40%;'
+    var scontoAdulti = (ticketCost / 100) * 40;
+    console.log('Sconto adulti: ', scontoAdulti);
+    discountSpot.innerText = 'Discount: 40%;';
+    totalSpot.innerText =  ticketCost - scontoAdulti.toFixed(2);
+    
 
 }
 
 else  {
-    discountSpot.innerText = 'Discount: 0.'
+    discountSpot.innerText = 'Discount: 0';
 }
 
-// aggiunta testo in html
 
-var kmSpot = document.getElementById('kilometres').innerText = kilometres;
-var priceSpot = document.getElementById('price');
-var discountSpot = document.getElementById('discount');
-var totalSpot = document.getElementById('total');
+
+
+
+
+
+
 
 
 
