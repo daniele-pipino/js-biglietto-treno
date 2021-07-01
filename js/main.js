@@ -30,6 +30,7 @@ kmSpot.innerText = 'Chilometri: ' + kilometres;
 var ticketCost = kilometres * kilometresPrice;
 console.log('Costo del biglietto', ticketCost);
 priceSpot.innerText = 'Costo: ' + ticketCost;
+totalSpot.innerText = 'Totale: ' + ticketCost.toFixed(2);
 
 // definizione sconti 
 
@@ -37,30 +38,22 @@ priceSpot.innerText = 'Costo: ' + ticketCost;
 if (passengerAge < 18) {
     
     var scontoMinori = (ticketCost / 100) * 20;
-    console.log('Sconto Minori: ', scontoMinori);
+    console.log('Sconto Minori: ', scontoMinori.toFixed(2));
     discountSpot.innerText = 'Discount: 20%.';
     totalSpot.innerText =  ticketCost - scontoMinori.toFixed(2);
-    
-   
 }
 
 else if (passengerAge > 65) {
 
     var scontoAdulti = (ticketCost / 100) * 40;
-    console.log('Sconto adulti: ', scontoAdulti);
+    console.log('Sconto adulti: ', scontoAdulti.toFixed(2));
     discountSpot.innerText = 'Discount: 40%;';
-    totalSpot.innerText =  ticketCost - scontoAdulti.toFixed(2);
-    
-
+    totalSpot.innerText = ticketCost - scontoAdulti.toFixed(2);
 }
 
 else  {
     discountSpot.innerText = 'Discount: 0';
 }
-
-
-
-
 
 
 
