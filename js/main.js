@@ -22,7 +22,24 @@ console.log('Km', kilometres)
 // calcolo costo del biglietto
 
 var ticketCost = kilometres * kilometresPrice;
-console.log('Costo del biglietto', ticketCost)
+console.log('Costo del biglietto', ticketCost);
+
+// definizione sconti 
+
+
+if (passengerAge < 18) {
+    
+    var scontoMinori = (ticketCost / 100) * 20;
+    console.log('Sconto Minori: ', scontoMinori);
+   
+}
+
+if (passengerAge > 65) {
+
+    var scontoadulti = (ticketCost / 100) * 40;
+    console.log('Sconto adulti: ', scontoadulti);
+
+}
 
 
 
